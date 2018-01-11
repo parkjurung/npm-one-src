@@ -1,0 +1,20 @@
+{
+  "name": "one-src",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "CD",
+    "continuous",
+    "delivery",
+    "deploy"
+  ],
+  "bin":{
+    "onesrc": "bin/index.sh"
+  },
+  "author": "Jurung Park",
+  "license": "ISC"
+}
