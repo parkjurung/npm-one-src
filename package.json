@@ -2,7 +2,7 @@
   "name": "one-src",
   "version": "1.0.1",
   "description": "",
-  "main": "./lib/index.js",
+  "main": "bin/index.sh",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,5 +16,8 @@
     "onesrc": "bin/index.sh"
   },
   "author": "Jurung Park",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "xmldom": "^0.1.27"
+  }
 }
