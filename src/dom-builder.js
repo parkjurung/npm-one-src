@@ -1,5 +1,4 @@
 (function (map, window) {
-  // html, head, body는 원래 있던 걸 쓴다.
   if (!window) console.error('global variable \'window\' is needed');
 
   var rootNode = window.document;
@@ -20,6 +19,7 @@
       currentNode = document.createTextNode(elem);
     } else if (elemType === 'object' && elem) {
       elemTag = elem.type;
+      // html, head, body는 원래 있던 걸 쓴다.
       if (elemTag === 'html' || elemTag === 'head' || elemTag === 'body') {
         existingNode = document.getElementsByTagName(elemTag)[0];
         if (existingNode) {
