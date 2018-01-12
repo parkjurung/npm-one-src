@@ -4,9 +4,9 @@ const fs = require('fs');
 const doctypeRemoved = htmlStr.replace(/\<!DOCTYPE.+?\>/g,'');
 const extraStringRemoved = doctypeRemoved.trim();
 
-console.log('@@@ html-to-json argv : ',process.argv);
+// console.log('@@@ html-to-json argv : ',process.argv);
 
-console.log('@@@ extraStringRemoved : ', JSON.stringify(extraStringRemoved));
+// console.log('@@@ extraStringRemoved : ', JSON.stringify(extraStringRemoved));
 
 function mapDOM(element, json) {
   let treeObject = {};
@@ -60,13 +60,13 @@ function mapDOM(element, json) {
 
 const jsonFromHtml = mapDOM(extraStringRemoved, true);
 
-console.log('@@@ jsonFromHtml : ', jsonFromHtml);
+// console.log('@@@ jsonFromHtml : ', jsonFromHtml);
 
 fs.writeFile('/tmp/dom-map.json',jsonFromHtml,function(err){
   if(err){
     console.error('err at writing dom-map.json');
   }else{
-    console.log('write dom-map.json successfully');
+
   }
 });
 
