@@ -23,8 +23,10 @@
       if (elemTag === 'html' || elemTag === 'head' || elemTag === 'body') {
         existingNode = document.getElementsByTagName(elemTag)[0];
         if (existingNode) {
+          console.log('node exists :', elemTag);
           currentNode = existingNode;
         } else {
+          console.log('node not exists :', elemTag);
           currentNode = document.createElement(elemTag);
         }
       } else {
