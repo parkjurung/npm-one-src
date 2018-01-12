@@ -2,7 +2,7 @@
 
 HTML_PATH=$1
 TEST_FLAG=$2
-if [[ TEST_FLAG ]]
+if [[ TEST_FLAG == "test" ]]
 then
     ONESRC_PATH=.
 else
