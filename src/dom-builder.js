@@ -2,6 +2,7 @@
   if (!window) console.error('global variable \'window\' is needed');
 
   var rootNode = window.document;
+  var scriptQueue = [];
 
   var setAttribute = function (currentNode, attributes) {
     for (var attrName in attributes) {
@@ -52,10 +53,26 @@
       createNode(childElems[idx], currentNode);
     }
 
-    if(parentNode !== rootNode){
-      parentNode.appendChild(currentNode);
+    if (currentNode.tagName === 'SCRIPT') { // script
+      scriptQueue.push({parentNode: parentNode, currentNode: currentNode});
+    } else {
+      if (parentNode !== rootNode) {
+        parentNode.appendChild(currentNode);
+      }
+    }
+  };
+
+  var appendScripts = function () {
+    for (var i = 0; i < scriptQueue.length-1; i++) {
+      (function(idx){
+        scriptQueue[idx].currentNode.onload = function(){scriptQueue[idx+1].parentNode.appendChild(scriptQueue[idx+1].currentNode)};
+      })(i);
+    }
+    if(scriptQueue[0]){
+      scriptQueue[0].parentNode.appendChild(scriptQueue[0].currentNode);
     }
   };
 
   createNode(map, rootNode);
+  appendScripts();
 })(__one_src_map, window);

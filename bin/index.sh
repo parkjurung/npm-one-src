@@ -6,8 +6,10 @@ if [[ "$2" = "test" ]]
 then
     echo "@@@ onesrc >> this is test"
     ONESRC_PATH=.
+    EXT=js
 else
     ONESRC_PATH=/usr/local/lib/node_modules/one-src
+    EXT=min.js
 fi
 
 echo "@@@ onesrc >> start to make a js file from given HTML file."
@@ -16,7 +18,7 @@ echo "@@@ onesrc >> start to make a js file from given HTML file."
 node $ONESRC_PATH/src/html-to-json.js "`cat $1`"
 
 # make js file by combining dom-map.json and dom-builder.min.js
-echo "var __one_src_map = `cat /tmp/dom-map.json`;`cat $ONESRC_PATH/src/dom-builder.min.js`" > ./$(basename $1).onesrc.js
+echo "var __one_src_map = `cat /tmp/dom-map.json`;`cat $ONESRC_PATH/src/dom-builder.$EXT`" > ./$(basename $1).onesrc.js
 
 # delete dom-map.json
 rm /tmp/dom-map.json
