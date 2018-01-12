@@ -1,7 +1,7 @@
 # npm one-src
 
 ## Description
-This package is for delivering wep app built by `webpack` or `Angular CLI`
+This package is for delivering wep app built by `webpack` or `Angular CLI`.
 The result js file of `onesrc` will dynamically create and append resources on html file.
 Size of the `*.onesrc.js` is **not** sum of the all resources's size.
 ## Environment
