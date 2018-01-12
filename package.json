@@ -1,6 +1,6 @@
 {
   "name": "one-src",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "bin/index.sh",
   "scripts": {
