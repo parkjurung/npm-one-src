@@ -2,12 +2,17 @@
 
 ## Description
 This package is for delivering wep app built by `webpack` or `Angular CLI`
+The result js file of `onesrc` will dynamically create and append resources on html file.
+Size of the `*.onesrc.js` is **not** sum of the all resources's size.
+## Environment
+Have been tested on
+`macOS HighSierra`
 ## Install
 `npm install -g one-src`
 
 ## Usage
 `onesrc test.html`
-the command will make a js file named `test.html.onesrc.js` on ./
+the command will make a js file named `test.html.onesrc.js` on path `./`
 
 ## Example
 ### sample.html

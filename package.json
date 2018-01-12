@@ -3,6 +3,10 @@
   "version": "1.0.7",
   "description": "",
   "main": "bin/index.sh",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/parkjurung/npm-one-src.git"
+  },
   "scripts": {
     "test": "bin/index.sh test/index.html test",
     "build": "uglifyjs -c -m -- src/dom-builder.js > src/dom-builder.min.js"
