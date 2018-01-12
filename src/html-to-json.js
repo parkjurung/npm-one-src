@@ -2,7 +2,8 @@ const htmlStr = process.argv[2];
 const DOMParser = require('xmldom').DOMParser;
 const fs = require('fs');
 const doctypeRemoved = htmlStr.replace(/\<!DOCTYPE.+?\>/g,'');
-const extraStringRemoved = doctypeRemoved.trim();
+const doctypeRemoved2 = doctypeRemoved.replace(/\<!doctype.+?\>/g,'');
+const extraStringRemoved = doctypeRemoved2.trim();
 
 // console.log('@@@ html-to-json argv : ',process.argv);
 

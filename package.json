@@ -5,7 +5,7 @@
   "main": "bin/index.sh",
   "repository": {
     "type": "git",
-    "url": "https://github.com/parkjurung/npm-one-src.git"
+    "url": "git+https://github.com/parkjurung/npm-one-src.git"
   },
   "scripts": {
     "test": "bin/index.sh test/index.html test",
